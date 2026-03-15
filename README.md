@@ -12,8 +12,8 @@ A FastAPI app wrapping a LangGraph-powered AI agent that helps content creators 
 
 ## Tools
 
-- **get_trending_topics** — returns trending topics for a given platform
-- **get_content_ideas** — returns content format ideas for a given niche
+- **get_trending_topics** - returns trending topics for a given platform
+- **get_content_ideas** - returns content format ideas for a given niche
 
 ## Local Setup
 
