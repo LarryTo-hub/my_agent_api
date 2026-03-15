@@ -6,7 +6,7 @@ A FastAPI app wrapping a LangGraph-powered AI agent that helps content creators 
 
 | Method | Path | Description |
 |---|---|---|
-| `GET` | `/health` | Health check — returns `{"status": "ok"}` |
+| `GET` | `/health` | Health check - returns `{"status": "ok"}` |
 | `POST` | `/chat` | Send a message, get an AI response |
 | `GET` | `/ui` | Chat UI in the browser |
 
