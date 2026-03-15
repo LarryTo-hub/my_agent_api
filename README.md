@@ -6,6 +6,7 @@ A FastAPI app wrapping a LangGraph-powered AI agent that helps content creators 
 
 | Method | Path | Description |
 |---|---|---|
+| `GET` | `/` | Redirects to `/ui` |
 | `GET` | `/health` | Health check - returns `{"status": "ok"}` |
 | `POST` | `/chat` | Send a message, get an AI response |
 | `GET` | `/ui` | Chat UI in the browser |
@@ -14,6 +15,15 @@ A FastAPI app wrapping a LangGraph-powered AI agent that helps content creators 
 
 - **get_trending_topics** - returns trending topics for a given platform
 - **get_content_ideas** - returns content format ideas for a given niche
+- **get_hashtags** - returns relevant hashtags for a given niche or topic
+
+## UI Features
+
+- Scrollable chat history with distinct user and agent message bubbles
+- Quick Question buttons - one-click prompts for common creator questions
+- Loading indicator while waiting for a response
+- Auto-resizing text input with Enter to send
+- Dark theme, no external dependencies
 
 ## Local Setup
 
