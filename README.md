@@ -1,6 +1,6 @@
 # AlgoRhythm - Content Creator Assistant
 
-A FastAPI app wrapping a LangGraph-powered AI agent that helps content creators plan posts, choose hashtags, and identify trending topics.
+A FastAPI app wrapping a LangGraph-powered AI agent that helps content creators plan posts, choose hashtags, and identify trending topics. Agent deployed using render and can be viewed at: https://my-agent-api-l8m9.onrender.com/ui/
 
 ## Endpoints
 
