@@ -1,4 +1,4 @@
-# AlgoRhythm — Content Creator Assistant
+# AlgoRhythm - Content Creator Assistant
 
 A FastAPI app wrapping a LangGraph-powered AI agent that helps content creators plan posts, choose hashtags, and identify trending topics.
 
