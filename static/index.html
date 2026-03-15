@@ -194,6 +194,30 @@
     }
 
     .welcome strong { color: #a78bfa; display: block; font-size: 1.05rem; margin-bottom: 8px; }
+
+    #quick-questions {
+      padding: 0 16px 12px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      max-width: 780px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .quick-btn {
+      background: #1e293b;
+      border: 1px solid #2d3148;
+      border-radius: 20px;
+      color: #a78bfa;
+      font-size: 0.8rem;
+      padding: 6px 14px;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+      white-space: nowrap;
+    }
+
+    .quick-btn:hover { background: #2d3148; border-color: #6d28d9; }
   </style>
 </head>
 <body>
@@ -208,6 +232,15 @@
         <strong>Hello, Creator! 👋</strong>
         Ask me what's trending, get content format ideas, or brainstorm your next post.
       </div>
+    </div>
+
+    <div id="quick-questions">
+      <button class="quick-btn" data-q="What's trending on YouTube right now?">🔥 YouTube trends</button>
+      <button class="quick-btn" data-q="What's trending on TikTok right now?">🎵 TikTok trends</button>
+      <button class="quick-btn" data-q="What content formats should I use for fitness content?">💪 Fitness formats</button>
+      <button class="quick-btn" data-q="What hashtags should I use for travel content?">✈️ Travel hashtags</button>
+      <button class="quick-btn" data-q="Give me content ideas for cooking">🍳 Cooking ideas</button>
+      <button class="quick-btn" data-q="What content formats work best for tech content?">💻 Tech formats</button>
     </div>
 
     <div id="input-area">
@@ -227,6 +260,17 @@
     const inputEl = document.getElementById('user-input');
     const sendBtn = document.getElementById('send-btn');
     let isLoading = false;
+
+    function prefill(text) {
+      inputEl.value = text;
+      inputEl.style.height = 'auto';
+      inputEl.style.height = Math.min(inputEl.scrollHeight, 140) + 'px';
+      inputEl.focus();
+    }
+
+    document.querySelectorAll('.quick-btn').forEach(btn => {
+      btn.addEventListener('click', () => prefill(btn.dataset.q));
+    });
 
     function clearWelcome() {
       const welcome = messagesEl.querySelector('.welcome');

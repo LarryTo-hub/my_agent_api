@@ -4,6 +4,7 @@ load_dotenv()
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from fastapi.responses import RedirectResponse
 from pydantic import BaseModel
 from langchain_core.messages import HumanMessage
 
@@ -25,6 +26,11 @@ class ChatRequest(BaseModel):
 
 class ChatResponse(BaseModel):
     response: str
+
+
+@app.get("/")
+def root():
+    return RedirectResponse(url="/ui")
 
 
 @app.get("/health")

@@ -27,7 +27,18 @@ def get_content_ideas(niche: str) -> str:
     )
 
 
-tools = [get_trending_topics, get_content_ideas]
+@tool
+def get_hashtags(niche: str) -> str:
+    """Get relevant hashtags for a given niche or topic.
+    Use this when the user asks for hashtags, tags, or ways to increase reach."""
+    return (
+        f"Top hashtags for {niche}: "
+        f"#{niche.replace(' ', '')} #ContentCreator #GrowYourAudience "
+        "#Viral #Trending #CreatorTips #SocialMediaMarketing #ContentStrategy"
+    )
+
+
+tools = [get_trending_topics, get_content_ideas, get_hashtags]
 
 model = ChatGoogleGenerativeAI(
     model="gemini-2.0-flash",
